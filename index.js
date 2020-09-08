@@ -1,17 +1,27 @@
+var question = 
+
 var countdownElement = document.getElementById("countdown");
-var textElementById("text");
+var textElement = document.getElementById("text");
 
 function prepareQuiz() {
-    var timer 10;
+    var timer = 10;
     var  prepareInterval = setInterval(function () {
         timer--;
         countdownElement.textContent = timer + " seconds until we start.";
         if(timer === 0) {
             clearInterval(prepareInterval);
             countdownElement.textContent = "";
-            
+            thisIsAQuiz();
         }
-    })
+    }, 1000);
 }
 
-console.log()
+function thisIsAQuiz() {
+    var currentQuestionIndex = 0;
+        var startQuiz = setInterval(function() {
+            textElement.textContent = questionArray[currentQuestionIndex];
+            currentQuestionIndex++;
+    },100);
+}
+
+prepareQuiz();
