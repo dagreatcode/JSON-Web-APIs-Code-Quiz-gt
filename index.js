@@ -1,4 +1,11 @@
-var question = 
+var question = [
+    "Question 1.",
+    "Question 2.",
+    "Question 3.",
+    "Question 4.",
+    "Question 5.",
+    "Question 6.",    
+]
 
 var countdownElement = document.getElementById("countdown");
 var textElement = document.getElementById("text");
