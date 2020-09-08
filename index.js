@@ -11,6 +11,7 @@ var countdownElement = document.getElementById("countdown");
 var textElement = document.getElementById("text");
 
 function prepareQuiz() {
+    //My Nice Timer
     var timer = 10;
     var  prepareInterval = setInterval(function () {
         timer--;
@@ -24,10 +25,12 @@ function prepareQuiz() {
 }
 
 function thisIsAQuiz() {
+    //Print Questions One At A Time
     var currentQuestionIndex = 0;
-        var startQuiz = setInterval(function() {
-            textElement.textContent = questionArray[currentQuestionIndex];
-            currentQuestionIndex++;
+    var questionArray = question.split(" ");
+    var startQuizInterval = setInterval(function() {
+        textElement.textContent = questionArray[currentQuestionIndex];
+        currentQuestionIndex++;
     },100);
 }
 
