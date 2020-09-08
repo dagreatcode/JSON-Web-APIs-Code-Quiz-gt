@@ -1,11 +1,6 @@
-var question = [
-    "Question 1.",
-    "Question 2.",
-    "Question 3.",
-    "Question 4.",
-    "Question 5.",
-    "Question 6.",    
-]
+var question =
+    "Question1 Question2 Question3, Question4, Question5, Question6 ";   
+
 
 var countdownElement = document.getElementById("countdown");
 var textElement = document.getElementById("text");
@@ -31,7 +26,10 @@ function thisIsAQuiz() {
     var startQuizInterval = setInterval(function() {
         textElement.textContent = questionArray[currentQuestionIndex];
         currentQuestionIndex++;
-    },100);
+        if (currentQuestionIndex === questionArray.length) {
+            clearInterval(startQuizInterval);
+        }
+    },2000);
 }
 
 prepareQuiz();
