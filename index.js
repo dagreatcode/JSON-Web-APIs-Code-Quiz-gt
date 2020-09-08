@@ -4,6 +4,12 @@ var question =
 
 var countdownElement = document.getElementById("countdown");
 var textElement = document.getElementById("text");
+var nextButton = document.getElementById("button")
+
+nextButton.addEventListener("click", function () {
+    question++;
+    textElement.textContent = question;
+})
 
 function prepareQuiz() {
     //My Nice Timer
