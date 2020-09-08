@@ -10,6 +10,14 @@ nextButton.addEventListener("click", function () {
     question++;
     textElement.textContent = question;
 })
+//More buttons i will use later
+// backButton.addEventListener("click", function () {
+//     if(question > 0){
+//         question--;
+//         textElement.textContent = question;
+//      }
+// })
+
 
 function prepareQuiz() {
     //My Nice Timer
