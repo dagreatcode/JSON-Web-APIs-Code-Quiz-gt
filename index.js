@@ -4,20 +4,6 @@ var question =
 
 var countdownElement = document.getElementById("countdown");
 var textElement = document.getElementById("text");
-var nextButton = document.getElementById("button")
-
-nextButton.addEventListener("click", function () {
-    question++;
-    textElement.textContent = question;
-})
-//More buttons i will use later
-// backButton.addEventListener("click", function () {
-//     if(question > 0){
-//         question--;
-//         textElement.textContent = question;
-//      }
-// })
-
 
 function prepareQuiz() {
     //My Nice Timer
@@ -45,5 +31,17 @@ function thisIsAQuiz() {
         }
     },2000);
 }
+console.log(prepareQuiz);
 
-prepareQuiz();
+
+function submit() {
+    var submitB = document.getElementById("submit");{
+    submitB.addEventListener("click", function (event) {
+        if (question++)
+            textElement.textContent = question;
+            console.log("OUCH!!!!!!!!");
+        }
+    }  
+}
+
+.addEventListener("click", )
