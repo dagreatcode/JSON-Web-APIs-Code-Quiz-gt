@@ -1,5 +1,3 @@
-var question =
-    "Question1 Question2 Question3, Question4, Question5, Question6 ";   
 
 
 var countdownElement = document.getElementById("countdown");
@@ -18,6 +16,15 @@ function prepareQuiz() {
         }
     }, 1000);
 }
+
+var question = [
+    "Question1",
+    "Question2", 
+    "Question3",
+    "Question4", 
+    "Question5", 
+    "Question6", 
+];
 
 function thisIsAQuiz() {
     //Print Questions One At A Time
@@ -42,6 +49,11 @@ function submit() {
             console.log("OUCH!!!!!!!!");
         }
     }  
+}
+var localStorage = {
+    getItem: function(name){
+        return name.value
+    }
 }
 
 .addEventListener("click", )
