@@ -1,8 +1,24 @@
+//Five Question Quiz
 
-
+//Variables
+var questions = [
+    "What is a for Loop?",
+    "What is a var use for",
+    "Question 3 is coming soon",
+    "Question 4 is comimg soon",
+    "Question 5 is coming soon",
+];
 var countdownElement = document.getElementById("countdown");
 var textElement = document.getElementById("text");
+var score = 0;
+var currentQuestion = 0;
 
+var todoInput = document.querySelector("#answers");
+var todoForm = document.querySelector("#form");
+var countdownTime = document.querySelector("#countdown");
+//First Thing is create a function
+
+//Functions
 function prepareQuiz() {
     //My Nice Timer
     var timer = 10;
@@ -15,16 +31,7 @@ function prepareQuiz() {
             thisIsAQuiz();
         }
     }, 1000);
-}
-
-var question = [
-    "Question1",
-    "Question2", 
-    "Question3",
-    "Question4", 
-    "Question5", 
-    "Question6", 
-];
+}console.log(prepareQuiz);
 
 function thisIsAQuiz() {
     //Print Questions One At A Time
@@ -38,22 +45,5 @@ function thisIsAQuiz() {
         }
     },2000);
 }
-console.log(prepareQuiz);
-
-
-function submit() {
-    var submitB = document.getElementById("submit");{
-    submitB.addEventListener("click", function (event) {
-        if (question++)
-            textElement.textContent = question;
-            console.log("OUCH!!!!!!!!");
-        }
-    }  
-}
-var localStorage = {
-    getItem: function(name){
-        return name.value
-    }
-}
-
-.addEventListener("click", )
+    
+//.addEventListener("click", )
