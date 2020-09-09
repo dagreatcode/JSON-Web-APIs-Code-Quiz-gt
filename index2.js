@@ -9,6 +9,10 @@ var questions = [
     "Question 5 is coming soon",
 ];
 
+var todoInput = document.querySelector("#todo-text");
+var todoForm = document.querySelector("#form");
+var todoList = document.querySelector("#todo-list");
+var countdownTime = document.querySelector("#countdown");
 //First Thing is create a function
 
 //Functions
