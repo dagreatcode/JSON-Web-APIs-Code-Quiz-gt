@@ -11,45 +11,28 @@
     <title>This Is A Code Quiz</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h3 id="countdown">COUNT DOWN</h3>
-          <h1 id="DoYourBest" Text Here>Do your BEST!!!</h1>
-          <form id="form" method="POST">
-          <label for="question-text">Questions:</label>
-        </div>
+        <h1 id="countdown">COUNT DOWN 10sec</h1>
+        <h3 id="DoYourBest" Text Here>Do your BEST!!!</h3>
+        <label for="question-text">Questions:</label>
       </div>
-      <div class="row">
-        <div class="col">
+      <div class="row"></div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-sm">A</button>
+          <button type="button" class="btn btn-secondary btn-sm">B</button>
+          <button type="button" class="btn btn-primary btn-sm">C</button>
+          <button type="button" class="btn btn-secondary btn-sm">D</button>
           <button id="submit">Next</button>
-          <button type="button" class="btn btn-primary btn-sm">Small button</button>
-          <button type="button" class="btn btn-secondary btn-sm">Small button</button>
         </div>
+        <div>
+          <p id="rulesQuestions">We will begin with a simple  game.</p>
+        </div>  
       </div>
     </div>
-    <script text="text/Javascript" src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h3 id="countdown">COUNT DOWN</h3>
-      <h1 id="DoYourBest" Text Here>Do your BEST!!!</h1>
-      <form id="form" method="POST">
-      <label for="question-text">Questions:</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <button id="submit">Next</button>
-      <button type="button" class="btn btn-primary btn-sm">Small button</button>
-      <button type="button" class="btn btn-secondary btn-sm">Small button</button>
-    </div>
-  </div>
-</div>
