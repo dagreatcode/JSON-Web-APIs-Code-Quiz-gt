@@ -1,8 +1,5 @@
 # Code-Quiz-GT
 
-```
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
-```
 
 ## Acceptance Criteria
 
@@ -33,3 +30,11 @@ https://dagreatcode.github.io/Code-Quiz-GT/
 
 Repo
 https://github.com/dagreatcode/Code-Quiz-GT
+
+
+Wow This was fun...
+I was having a tough time but i learned a lot of things..
+
+
+In this image, i had my count down working bot i broke it 3 html pages ago.
+<img src="./Booo.png" alt="Just a little image">
