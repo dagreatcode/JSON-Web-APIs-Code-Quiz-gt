@@ -23,7 +23,7 @@ var question = [
     "Question5 A,B,C, or D", 
 ];
 
-
+prepareQuiz();
 
 function nextQuestion (allQuestionsIndex) {
     var addd = question[allQuestionsIndex];
