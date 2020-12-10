@@ -1,39 +1,39 @@
 //Adding my Variables
-var countdownElement = document.getElementById("countdown");
-var currentQuestion = 0;
-var score = 0;
+var countdownElement = document.querySelector(".countdown");
+// var currentQuestion = 0;
+// var score = 0;
 var timer = 10;
-var finished = "";
-var form = document.getElementById("form");
-var questionElement = document.getElementById("allQuestions");
-var questionText = document.getElementById("text");
-var buttonOne = document.querySelector("buttonOne");
-var buttonTwo = document.querySelector("buttonTwo");
-var buttonThree = document.gquerySelector("buttonThree");
-var buttonFour = document.querySelector("buttonFour");
-var buttonFive = document.querySelector("buttonFive");
-var nextButton = document.getElementById("submit");
-var resultYnN = document.getElementById("question-text");
-var resultCount = document.getElementById("result");
-var question = [
-    "Question1 A,B,C, or D",
-    "Question2 A,B,C, or D", 
-    "Question3 A,B,C, or D",
-    "Question4 A,B,C, or D", 
-    "Question5 A,B,C, or D", 
-];
+// var finished = "";
+// var form = document.getElementById("form");
+// var questionElement = document.getElementById("allQuestions");
+// var questionText = document.getElementById("text");
+// var buttonOne = document.querySelector("buttonOne");
+// var buttonTwo = document.querySelector("buttonTwo");
+// var buttonThree = document.querySelector("buttonThree");
+// var buttonFour = document.querySelector("buttonFour");
+// var buttonFive = document.querySelector("buttonFive");
+// var nextButton = document.getElementById("submit");
+// var resultYnN = document.getElementById("question-text");
+// var resultCount = document.getElementById("result");
+// var question = [
+//     "Question1 A,B,C, or D",
+//     "Question2 A,B,C, or D", 
+//     "Question3 A,B,C, or D",
+//     "Question4 A,B,C, or D", 
+//     "Question5 A,B,C, or D", 
+// ];
 
 prepareQuiz();
 
-function nextQuestion (allQuestionsIndex) {
-    var addd = question[allQuestionsIndex];
-    questionElement.textContent = (questionIndex + 1) + ', '+ addd.allQuestions;
-    buttonOne.textContent = addd.buttonOne;
-    buttonTwo.textContent = addd.buttonTwo;
-    buttonThree.textContent = addd.buttonThree;
-    buttonFour.textContent = addd.buttonFour;
-    buttonFive.textContent = addd.buttonFive;
-}
+// function nextQuestion (allQuestionsIndex) {
+//     var addd = question[allQuestionsIndex];
+//     questionElement.textContent = (questionIndex + 1) + ', '+ addd.allQuestions;
+//     buttonOne.textContent = addd.buttonOne;
+//     buttonTwo.textContent = addd.buttonTwo;
+//     buttonThree.textContent = addd.buttonThree;
+//     buttonFour.textContent = addd.buttonFour;
+//     buttonFive.textContent = addd.buttonFive;
+// }
 
 // //Adding my Functions
 function prepareQuiz() {
@@ -43,7 +43,7 @@ function prepareQuiz() {
     countdownElement.textContent = timer + " seconds until we start.";
         if(timer === 0) {
             clearInterval(timerInterval);
-            prepareQuiz();
+            // prepareQuiz();
         }
     }, 1000);
 }

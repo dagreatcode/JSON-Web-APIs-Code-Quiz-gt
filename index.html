@@ -17,11 +17,15 @@
   <body>
     <div class="container">
       <div class="row">
-        <h1 id="countdown">COUNT DOWN 10sec</h1>
-        <h3 id="DoYourBest" Text Here>Do your BEST!!!</h3>
+        <h1 class="countdown"></h1>
         <label for="question-text">Questions:</label>
       </div>
-      <div class="row"></div>
+      <div class="row">
+        <div>
+          <p id="allQuestions">We will begin with a simple  game.</p>
+        </div>  
+      </div>
+      <div class="row">
         <div class="btn-group">
           <button type="buttonOne" class="btn btn-primary btn-sm" onclick="nextQuestion();">A</button>
           <button type="buttonTwo" class="btn btn-secondary btn-sm" onclick="nextQuestion();">B</button>
@@ -30,11 +34,10 @@
           <button type="buttonFive" class="btn btn-secondary btn-sm" onclick="nextQuestion();">E</button>
           <button id="submit">Next</button>
         </div>
-        <div>
-          <p id="allQuestions">We will begin with a simple  game.</p>
-        </div>  
       </div>
     </div>
     <script src="./assets/JS/index.js"></script>
   </body>
 </html>
+
+
