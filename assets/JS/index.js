@@ -2,7 +2,7 @@
 var countdownElement = document.querySelector(".countdown");
 // var currentQuestion = 0;
 // var score = 0;
-var timer = 10;
+var timer = 99;
 // var finished = "";
 // var form = document.getElementById("form");
 // var questionElement = document.getElementById("allQuestions");
@@ -46,12 +46,12 @@ function prepareQuiz() {
             // prepareQuiz();
         }
     }, 1000);
-}
+};
     
 
 function loadQuestion () {
    
-    var selectedOption = document.querySelector(button);
+    var selectedOption = document.querySelector(submit);
     if (question[currentQuestion].selectedOption === selectedOption){
         score += 1
         selectedOption.textContent = "Great";
@@ -78,7 +78,7 @@ function loadQuestion () {
 
 
 
-}
+};
 
 
 
@@ -92,19 +92,19 @@ console.log("hello");
 
 buttonOne.addEventListener("click", function() {
 
-})
+});
 
 buttonTwo.addEventListener("click", function() {
     
-})
+});
 
 buttonThree.addEventListener("click", function() {
     
-})
+});
 
 buttonFour.addEventListener("click", function() {
     
-})
+});
 
 
 // //Test Runner
