@@ -1,4 +1,4 @@
-//Adding Variables
+//Adding Variables DOM
 var countdownElement = document.querySelector(".countdown");
 var buttonElement = document.getElementById("submit");
 var questionsEl = document.getElementById("allQuestions")
@@ -36,6 +36,7 @@ function startTimer() {
     }, 1000);
 };
 
+// Functions Javascript variables
 var questions = [
     {
         question: "Question 1: A,B,C, or D",
@@ -75,6 +76,7 @@ var questions = [
 //     console.log(question);
 // };
 
+// Function Definitions
 function selectAndDisplayQuestion(){
     console.log("RandomQuestionArray", questions);
     var randomIndex = Math.floor(Math.random() * questions.length);
@@ -83,8 +85,10 @@ function selectAndDisplayQuestion(){
     questionsEl.textContent = questions[randomIndex].question + " - " + questions[randomIndex].answer;
 };
 
+// Function Call
 selectAndDisplayQuestion()
 
+// Event Listeners
 buttonElement.addEventListener("click", function(){
     selectAndDisplayQuestion()
 });
