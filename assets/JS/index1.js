@@ -41,41 +41,89 @@ function startTimer() {
 var questions = [
     {
         question: "Question 1: A,B,C, or D",
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "a",
         // image: "",
     },
     {
-        question: "Question 2: A,B,C, or D", 
+        question: "Question 2: A,B,C, or D",
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "b",
         // image: "",
     },
     {
         question: "Question 3: A,B,C, or D",
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "c",
         // image: "",
     },
     {
         question: "Question 4: A,B,C, or D", 
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "d",  
         // image: "",
     },
     {
         question: "Question 5: A,B,C, or D", 
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "a",
         // image: "",
     },
     {
         question: "Question 6: A,B,C, or D", 
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "b",
         // image: "",
     },
     {
         question: "Question 7: A,B,C, or D", 
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "c",
         // image: "",
     },
     {
         question: "Question 8: A,B,C, or D", 
+        choice: [
+            "",
+            "",
+            "",
+            ""
+        ],
         answer: "d",
         // image: "",
     },
@@ -91,6 +139,7 @@ function selectAndDisplayQuestion(){
     var randomIndex = Math.floor(Math.random() * questions.length);
     console.log("RandomIndex", randomIndex);
     console.log("Element", questions[randomIndex]);
+
     //     // Refresh image on every click
     //     imageContainerEl.innerHTML = "";
     //     // 1. Create an element
@@ -104,6 +153,10 @@ function selectAndDisplayQuestion(){
     questionsEl.textContent = questions[randomIndex].question + " - " + questions[randomIndex].answer;
 
 };
+
+function selectAndDisplayButtonAnswer(){
+    console.log("Hi")
+}
 
 // Function Call
 selectAndDisplayQuestion();
