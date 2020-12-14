@@ -120,7 +120,30 @@ function questionClick() {
 };
 
 function quizEnd() {
+  // stop timer
+  clearInterval(timerId);
 
+  // show end screen
+  var endScreenEl = document.getElementById("end-screen");
+  endScreenEl.removeAttribute("class");
+
+  // show final score
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = time;
+
+  // hide questions section
+  questionsEl.setAttribute("class", "hide");
+}
+
+function clockTick() {
+  // update time
+  time--;
+  timerEl.textContent = time;
+
+  // check if user ran out of time
+  if (time <= 0) {
+    quizEnd();
+  }
 };
 
 function clockTick() {
@@ -135,7 +158,28 @@ function clockTick() {
   }
 
 function saveHighscore() {
+  // get value of input box
+  var initials = initialsEl.value.trim();
 
+  // make sure value wasn't empty
+  if (initials !== "") {
+    // get saved scores from localstorage, or if not any, set to empty array
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+    // format new score object for current user
+    var newScore = {
+      score: time,
+      initials: initials
+    };
+
+    // save to localstorage
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    // redirect to next page
+    window.location.href = "highscores.html";
+  }
 };
 
 function checkForEnter(event) {
@@ -145,13 +189,13 @@ function checkForEnter(event) {
     }
   }
 
-function selectAndDisplayQuestion(){
-    console.log("RandomQuestionArray", questions);
-    var randomIndex = Math.floor(Math.random() * questions.length);
-    console.log("RandomIndex", randomIndex);
-    console.log("Element", questions[randomIndex]);
-    questionsEl.textContent = questions[randomIndex].question + " - " + questions[randomIndex].answer;
-};
+// function selectAndDisplayQuestion(){
+//     console.log("RandomQuestionArray", questions);
+//     var randomIndex = Math.floor(Math.random() * questions.length);
+//     console.log("RandomIndex", randomIndex);
+//     console.log("Element", questions[randomIndex]);
+//     questionsEl.textContent = questions[randomIndex].question + " - " + questions[randomIndex].answer;
+// };
 
 // user clicks button to submit initials
 submitBtn.onclick = saveHighscore;
