@@ -1,36 +1,89 @@
-#countdown {
-    text-align: center;
-    margin: auto;
-}
-
-#text {
-    text-align: center;
-    margin: auto;
-}
-
-#p {
-    background-color: lightgoldenrodyellow;
-    display: inline-flex;
-    align-content: center;
-    justify-content: center;
-    font-size: 40;
-    height: 70px;
-    width: 200px;
-}
-
-.btn-group {
-    background-color: #68167c;
-    border: 1px solid rgb(0, 0, 0); 
-    color: white; 
-    padding: 10px 24px; 
-    cursor: pointer; 
-}
-  
-.btn-group button:not(:last-child) {
-    border-bottom: none;
+body {
+    font-family: Arial;
+    font-size: 120%;
   }
   
-  /* Add a background color on hover */
-.btn-group button:hover {
-    background-color: hsl(261, 51%, 36%);
-}
+  a {
+    color: #0d18b9;
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+  
+  a:hover {
+    color: #1316f1;
+  }
+  
+  button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: #362b99;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: white;
+    border: 0;
+    transition: background-color 0.1s;
+  }
+  
+  button:hover {
+    background-color: #7075a5;
+  }
+  
+  .choices button {
+    display: block;
+  }
+  
+  input[type="text"] {
+    font-size: 100%;
+  }
+  
+  ol {
+    padding-left: 0px;
+    max-height: 400px;
+    overflow: auto;
+  }
+  
+  li {
+    padding: 5px;
+    list-style: decimal inside none;
+  }
+  
+  li:nth-child(odd) {
+    background-color: #f3edfc;
+  }
+  
+  .wrapper {
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .start {
+    text-align: center;
+  }
+  
+  .scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .feedback {
+    font-style: italic;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: gray;
+    border-top: 2px solid #ccc;
+  }
+  
+  .timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
