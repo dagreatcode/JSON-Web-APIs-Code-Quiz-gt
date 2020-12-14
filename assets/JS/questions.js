@@ -32,20 +32,20 @@ var questions = [
   },
   {
     question: "Question 6: A,B,C, or D",
-    choice: ["", "", "", ""],
-    answer: "b",
+    choice: ["love", "hate", "mean", "happiness"],
+    answer: "love",
     // image: "",
   },
   {
     question: "Question 7: A,B,C, or D",
-    choice: ["", "", "", ""],
-    answer: "c",
+    choice: ["jr", "vincent", "connie", "barbara"],
+    answer: "connie",
     // image: "",
   },
   {
     question: "Question 8: A,B,C, or D",
-    choice: ["", "", "", ""],
-    answer: "d",
+    choice: ["pizza", "chicken", "candy", "pancakes"],
+    answer: "pizza",
     // image: "",
   },
 ];
