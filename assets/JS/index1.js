@@ -1,167 +1,117 @@
-//Adding Variables DOM
+//Adding my Variables
 var countdownElement = document.querySelector(".countdown");
-var buttonElement = document.getElementById("submit");
-var questionsEl = document.getElementById("allQuestions")
-// var imageContainerEl = document.getElementById("image-container")
-
-var score = 0;
-var timer = 10;
-var timer2 = 99;
+// var currentQuestion = 0;
+// var score = 0;
+var timer = 99;
+// var finished = "";
+// var form = document.getElementById("form");
+// var questionElement = document.getElementById("allQuestions");
+// var questionText = document.getElementById("text");
+// var buttonOne = document.querySelector("buttonOne");
+// var buttonTwo = document.querySelector("buttonTwo");
+// var buttonThree = document.querySelector("buttonThree");
+// var buttonFour = document.querySelector("buttonFour");
+// var buttonFive = document.querySelector("buttonFive");
+// var nextButton = document.getElementById("submit");
+// var resultYnN = document.getElementById("question-text");
+// var resultCount = document.getElementById("result");
+// var question = [
+//     "Question1 A,B,C, or D",
+//     "Question2 A,B,C, or D", 
+//     "Question3 A,B,C, or D",
+//     "Question4 A,B,C, or D", 
+//     "Question5 A,B,C, or D", 
+// ];
 
 prepareQuiz();
+
+// function nextQuestion (allQuestionsIndex) {
+//     var addd = question[allQuestionsIndex];
+//     questionElement.textContent = (questionIndex + 1) + ', '+ addd.allQuestions;
+//     buttonOne.textContent = addd.buttonOne;
+//     buttonTwo.textContent = addd.buttonTwo;
+//     buttonThree.textContent = addd.buttonThree;
+//     buttonFour.textContent = addd.buttonFour;
+//     buttonFive.textContent = addd.buttonFive;
+// }
 
 // //Adding my Functions
 function prepareQuiz() {
     //My Nice Timer
     var timerInterval = setInterval(function () {
     timer--;
-    countdownElement.textContent = timer + " seconds until we start the Code Quiz.";
+    countdownElement.textContent = timer + " seconds until we start.";
         if(timer === 0) {
             clearInterval(timerInterval);
-            startTimer();
-            selectAndDisplayQuestion();
-         
-            // startQuiz();
+            // prepareQuiz();
         }
     }, 1000);
 };
+    
 
-function startTimer() {
-    var timerInterval = setInterval(function () {
-    timer2--;
-    countdownElement.textContent = timer2 + " seconds until finished";
-        if(timer2 === 0) {
-            clearInterval(timerInterval);
-            prepareQuiz();
-        }
-    }, 1000);
-};
+function loadQuestion () {
+   
+    var selectedOption = document.querySelector(submit);
+    if (question[currentQuestion].selectedOption === selectedOption){
+        score += 1
+        selectedOption.textContent = "Great";
+        document.body.append();
+        console.log()
+    }
+    selectedOption.checked = false;
+   
+    if (question[0] === true) {
+        nextQuestion();
+    }
+    if (question[1] === true) {
+        nextQuestion();
+    }
+    if (question[2] === true) {
+        nextQuestion();
+    }
+    if (question[3] === true) {
+        nextQuestion();
+    }
+    if (question[4] === true) {
+        finished();
+    }
 
-// Functions Javascript variables
-var questions = [
-    {
-        question: "Question 1: A,B,C, or D",
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "a",
-        // image: "",
-    },
-    {
-        question: "Question 2: A,B,C, or D",
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "b",
-        // image: "",
-    },
-    {
-        question: "Question 3: A,B,C, or D",
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "c",
-        // image: "",
-    },
-    {
-        question: "Question 4: A,B,C, or D", 
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "d",  
-        // image: "",
-    },
-    {
-        question: "Question 5: A,B,C, or D", 
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "a",
-        // image: "",
-    },
-    {
-        question: "Question 6: A,B,C, or D", 
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "b",
-        // image: "",
-    },
-    {
-        question: "Question 7: A,B,C, or D", 
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "c",
-        // image: "",
-    },
-    {
-        question: "Question 8: A,B,C, or D", 
-        choice: [
-            "",
-            "",
-            "",
-            ""
-        ],
-        answer: "d",
-        // image: "",
-    },
-];
 
-// function startQuiz() {
-//     console.log(question);
-// };
-
-// Function Definitions
-function selectAndDisplayQuestion(){
-    console.log("RandomQuestionArray", questions);
-    var randomIndex = Math.floor(Math.random() * questions.length);
-    console.log("RandomIndex", randomIndex);
-    console.log("Element", questions[randomIndex]);
-
-    //     // Refresh image on every click
-    //     imageContainerEl.innerHTML = "";
-    //     // 1. Create an element
-    //     var imageEl = document.createAttribute("img");
-    //     // 2. add content
-    //     imageEl.setAttribute("alt", questions[randomIndex].answer);
-    //     imageEl.setAttribute("src", questions[randomIndex].image);
-    //     imageEl.setAttribute("style", "height: 200px")
-    // // 3. Append to existing element
-    // imageContainerEl.appendChild(imageEl);
-    questionsEl.textContent = questions[randomIndex].question + " - " + questions[randomIndex].answer;
 
 };
 
-function selectAndDisplayButtonAnswer(){
-    console.log("Hi")
-}
 
-// Function Call
-selectAndDisplayQuestion();
 
-// Event Listeners
-buttonElement.addEventListener("click", function(){
-    selectAndDisplayQuestion();
+
+
+console.log("hello");
+
+//ButtonEvents 
+
+
+
+buttonOne.addEventListener("click", function() {
+
 });
+
+buttonTwo.addEventListener("click", function() {
+    
+});
+
+buttonThree.addEventListener("click", function() {
+    
+});
+
+buttonFour.addEventListener("click", function() {
+    
+});
+
+
+// //Test Runner
+// function runTest() {
+//     for (var i = 0; i < runTest.length; i++) {
+//         var runTest = runTest[i];
+//         if click === true;
+
+//     }
+// }
