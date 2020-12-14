@@ -1,9 +1,10 @@
-// Question start / Timer
+// variables to keep track of quiz state
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
 
-//Adding Variables to reference DOM elements.
+// variables to reference DOM elements
+// var endScreenEl = document.getElementById("end-screen");
 var questionsEl = document.getElementById("questions");
 var timerEl = document.getElementById("time");
 var choicesEl = document.getElementById("choices");
@@ -12,26 +13,26 @@ var startBtn = document.getElementById("start");
 var initialsEl = document.getElementById("initials");
 var feedbackEl = document.getElementById("feedback");
 
-// Sound effects
+// sound effects
 var sfxRight = new Audio("assets/sfx/correct.wav");
 var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 function startQuiz() {
-    // Hiding the start screen so that the questions can appear in place. 
-    var startScreenEl = document.getElementById("start-screen");
-    startScreenEl.setAttribute("class", "hide");
+  // hide start screen
+  var startScreenEl = document.getElementById("start-screen");
+  startScreenEl.setAttribute("class", "hide");
 
-    // This is where I un-hide the questions section because its set to hide
-    questionsEl.removeAttribute("class");
+  // un-hide questions section
+  questionsEl.removeAttribute("class");
 
-    // start timer with ,1000) milli seconds
-    timerId = setInterval(clockTick, 1000);
+  // start timer
+  timerId = setInterval(clockTick, 1000);
 
-    // show starting time
-    timerEl.textContent = time;
-    getQuestion();
-};
+  // show starting time
+  timerEl.textContent = time;
 
+  getQuestion();
+}
 
 function getQuestion() {
   // get current question object from array
@@ -47,25 +48,23 @@ function getQuestion() {
   // loop over choices
   currentQuestion.choices.forEach(function(choice, i) {
     // create new button for each choice
-    var choicePick = document.createElement("button");
-    choicePick.setAttribute("class", "choice");
-    choicePick.setAttribute("value", choice);
+    var choiceNode = document.createElement("button");
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value", choice);
 
-    choicePick.textContent = i + 1 + ". " + choice;
+    choiceNode.textContent = i + 1 + ". " + choice;
 
-    // attach click event listener to each choice. The other way is to on("click",
-        // This way is better ;)
-    choicePick.onclick = questionClick;
+    // attach click event listener to each choice
+    choiceNode.onclick = questionClick;
 
     // display on the page
-    choicesEl.appendChild(choicePick);
+    choicesEl.appendChild(choiceNode);
   });
-    
-};
+}
 
 function questionClick() {
- // check if user guessed wrong
- if (this.value !== questions[currentQuestionIndex].answer) {
+  // check if user guessed wrong
+  if (this.value !== questions[currentQuestionIndex].answer) {
     // penalize time
     time -= 15;
 
@@ -102,7 +101,7 @@ function questionClick() {
   } else {
     getQuestion();
   }
-};
+}
 
 function quizEnd() {
   // stop timer
@@ -121,15 +120,15 @@ function quizEnd() {
 }
 
 function clockTick() {
-    // update time
-    time--;
-    timerEl.textContent = time;
-  
-    // check if user ran out of time
-    if (time <= 0) {
-      quizEnd();
-    }
+  // update time
+  time--;
+  timerEl.textContent = time;
+
+  // check if user ran out of time
+  if (time <= 0) {
+    quizEnd();
   }
+}
 
 function saveHighscore() {
   // get value of input box
@@ -154,14 +153,14 @@ function saveHighscore() {
     // redirect to next page
     window.location.href = "highscores.html";
   }
-};
+}
 
 function checkForEnter(event) {
-    // "13" represents the enter key
-    if (event.key === "Enter") {
-      saveHighscore();
-    }
+  // "13" represents the enter key
+  if (event.key === "Enter") {
+    saveHighscore();
   }
+}
 
 // user clicks button to submit initials
 submitBtn.onclick = saveHighscore;

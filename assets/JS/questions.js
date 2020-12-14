@@ -30,22 +30,4 @@ var questions = [
     answer: "console.log"
     // image: "",
   },
-  {
-    question: "Question 6: A,B,C, or D",
-    choice: ["love", "hate", "mean", "happiness"],
-    answer: "love",
-    // image: "",
-  },
-  {
-    question: "Question 7: A,B,C, or D",
-    choice: ["jr", "vincent", "connie", "barbara"],
-    answer: "connie",
-    // image: "",
-  },
-  {
-    question: "Question 8: A,B,C, or D",
-    choice: ["pizza", "chicken", "candy", "pancakes"],
-    answer: "pizza",
-    // image: "",
-  },
 ];
