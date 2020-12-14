@@ -49,6 +49,32 @@ function startQuiz() {
 
 
 function getQuestion() {
+  // get current question object from array
+  var currentQuestion = questions[currentQuestionIndex];
+
+  // update title with current question
+  var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+
+  // clear out any old question choices
+  choicesEl.innerHTML = "";
+
+  // loop over choices
+  currentQuestion.choices.forEach(function(choice, i) {
+    // create new button for each choice
+    var choicePick = document.createElement("button");
+    choicePick.setAttribute("class", "choice");
+    choicePick.setAttribute("value", choice);
+
+    choicePick.textContent = i + 1 + ". " + choice;
+
+    // attach click event listener to each choice. The other way is to on("click",
+        // This way is better ;)
+    choicePick.onclick = questionClick;
+
+    // display on the page
+    choicesEl.appendChild(choicePick);
+  });
     
 };
 
