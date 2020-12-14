@@ -1,3 +1,8 @@
+// Question start / Timer
+var currentQuestionIndex = 0;
+var time = questions.length * 15;
+var timerId;
+
 //Adding Variables to reference DOM elements.
 var questionsEl = document.getElementById("questions");
 var timerEl = document.getElementById("time");
@@ -11,27 +16,7 @@ var feedbackEl = document.getElementById("feedback");
 var sfxRight = new Audio("assets/sfx/correct.wav");
 var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
-// Question start / Timer
-var currentQuestionIndex = 0;
-var time = questions.length * 15;
-var timerId;
-
-// My Functions 
-// function startTimer() {
-//     var timeInterval = setInterval(function () {
-//     console.log("Timer");
-//     time--;
-//     countdownElement.textContent = time + " seconds until finished";
-//         if(time === 0) {
-//             clearInterval(timeInterval);
-//             startQuiz();
-//         }
-//     }, 1000);
-// };
-
-
 function startQuiz() {
-    console.log("Start");
     // Hiding the start screen so that the questions can appear in place. 
     var startScreenEl = document.getElementById("start-screen");
     startScreenEl.setAttribute("class", "hide");
@@ -136,17 +121,6 @@ function quizEnd() {
 }
 
 function clockTick() {
-  // update time
-  time--;
-  timerEl.textContent = time;
-
-  // check if user ran out of time
-  if (time <= 0) {
-    quizEnd();
-  }
-};
-
-function clockTick() {
     // update time
     time--;
     timerEl.textContent = time;
@@ -188,14 +162,6 @@ function checkForEnter(event) {
       saveHighscore();
     }
   }
-
-// function selectAndDisplayQuestion(){
-//     console.log("RandomQuestionArray", questions);
-//     var randomIndex = Math.floor(Math.random() * questions.length);
-//     console.log("RandomIndex", randomIndex);
-//     console.log("Element", questions[randomIndex]);
-//     questionsEl.textContent = questions[randomIndex].question + " - " + questions[randomIndex].answer;
-// };
 
 // user clicks button to submit initials
 submitBtn.onclick = saveHighscore;
