@@ -79,7 +79,44 @@ function getQuestion() {
 };
 
 function questionClick() {
+ // check if user guessed wrong
+ if (this.value !== questions[currentQuestionIndex].answer) {
+    // penalize time
+    time -= 15;
 
+    if (time < 0) {
+      time = 0;
+    }
+
+    // display new time on page
+    timerEl.textContent = time;
+
+    // play "wrong" sound effect
+    sfxWrong.play();
+
+    feedbackEl.textContent = "Wrong!";
+  } else {
+    // play "right" sound effect
+    sfxRight.play();
+
+    feedbackEl.textContent = "Correct!";
+  }
+
+  // flash right/wrong feedback on page for half a second
+  feedbackEl.setAttribute("class", "feedback");
+  setTimeout(function() {
+    feedbackEl.setAttribute("class", "feedback hide");
+  }, 1000);
+
+  // move to next question
+  currentQuestionIndex++;
+
+  // check if we've run out of questions
+  if (currentQuestionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
 };
 
 function quizEnd() {
