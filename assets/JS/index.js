@@ -32,12 +32,24 @@ var timerId;
 
 function startQuiz() {
     console.log("Start");
+    // Hiding the start screen so that the questions can appear in place. 
+    var startScreenEl = document.getElementById("start-screen");
+    startScreenEl.setAttribute("class", "hide");
+
+    // This is where I un-hide the questions section because its set to hide
+    questionsEl.removeAttribute("class");
+
+    // start timer with ,1000) milli seconds
+    timerId = setInterval(clockTick, 1000);
+
+    // show starting time
+    timerEl.textContent = time;
     getQuestion();
 };
 
 
 function getQuestion() {
-    console.log("Start");
+    
 };
 
 function questionClick() {
@@ -49,8 +61,15 @@ function quizEnd() {
 };
 
 function clockTick() {
-
-};
+    // update time
+    time--;
+    timerEl.textContent = time;
+  
+    // check if user ran out of time
+    if (time <= 0) {
+      quizEnd();
+    }
+  }
 
 function saveHighscore() {
 
