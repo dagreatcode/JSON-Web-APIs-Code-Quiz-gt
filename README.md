@@ -1,6 +1,20 @@
 # Code-Quiz-GT
 
-https://dagreatcode.github.io/Web-APIs-Code-Quiz/
+<!-- https://dagreatcode.github.io/Web-APIs-Code-Quiz-gt/ -->
+
+[![Website dagreatcode.github.io/Web-APIs-Code-Quiz-gt/](https://img.shields.io/website-up-down-green-red/https/dagreatcode.github.io/Web-APIs-Code-Quiz-gt/.svg)](https://dagreatcode.github.io/Web-APIs-Code-Quiz-gt/)
+
+
+[![GitHub followers](https://img.shields.io/github/followers/dagreatcode.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/dagreatcode?tab=followers)
+
+<img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/>
+<img src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
+<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
+
+
+
 ## Acceptance Criteria
 
 ```
@@ -26,15 +40,26 @@ SO THAT I can gauge my progress compared to my peers
 ```
 
 CodeQuiz WebSite
-https://dagreatcode.github.io/Code-Quiz-GT/
+
+https://dagreatcode.github.io/Web-APIs-Code-Quiz-gt/
 
 Repo
-https://github.com/dagreatcode/Code-Quiz-GT
 
+https://github.com/dagreatcode/Web-APIs-Code-Quiz-gt.git
 
 Wow This was fun...
 I was having a tough time but i learned a lot of things..
 
 
 In this image, i had my count down working bot i broke it 3 html pages ago.
-<img src="./Booo.png" alt="Just a little image">
+<img src="./assets/img/img5.png" alt="Just a little image">
+<img src="./assets/img/img1.png" alt="Just a little image">
+<img src="./assets/img/img2.png" alt="Just a little image">
+<img src="./assets/img/img3.png" alt="Just a little image">
+<img src="./assets/img/img4.png" alt="Just a little image">
+<img src="./assets/img/img6.png" alt="Just a little image">
+
+Here Is A Demo
+<img src="./assets/img/demo.gif" alt="Just a little image">
+
+
