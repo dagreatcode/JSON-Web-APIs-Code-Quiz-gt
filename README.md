@@ -51,15 +51,30 @@ Wow This was fun...
 I was having a tough time but i learned a lot of things..
 
 
-In this image, i had my count down working bot i broke it 3 html pages ago.
+In this image, I had my count down working but I got it working.
 <img src="./assets/img/img5.png" alt="Just a little image">
+
+## This is where the DOM was Manipulated. 
 <img src="./assets/img/img1.png" alt="Just a little image">
+
+### This is where I inserted the answers in the buttons. And the DOM was Manipulated for the questions. 
 <img src="./assets/img/img2.png" alt="Just a little image">
-<img src="./assets/img/img3.png" alt="Just a little image">
+
+### This information is saved in the client side for the user to keep up with a high score.
 <img src="./assets/img/img4.png" alt="Just a little image">
+
+### The high score is put into the local storage 
+<img src="./assets/img/img3.png" alt="Just a little image">
+
+
+### This is the Local Storage... FYI Indexed DB is there for other options.
 <img src="./assets/img/img6.png" alt="Just a little image">
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 Here Is A Demo
 <img src="./assets/img/demo.gif" alt="Just a little image">
-
-
+Thanks For Taking A Look....
