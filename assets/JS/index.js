@@ -1,10 +1,9 @@
-// variables to keep track of quiz state
+// Counter variables go here to keep track of the time and question index.
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
 
-// variables to reference DOM elements
-// var endScreenEl = document.getElementById("end-screen");
+// Element variables go here to reference DOM elements better.
 var questionsEl = document.getElementById("questions");
 var timerEl = document.getElementById("time");
 var choicesEl = document.getElementById("choices");
@@ -13,39 +12,42 @@ var startBtn = document.getElementById("start");
 var initialsEl = document.getElementById("initials");
 var feedbackEl = document.getElementById("feedback");
 
-// sound effects
+// sound effects path made into Audio variables to call containing the correct and incorrect sounds of audio files to be associated with the two new audio elements.
 var sfxRight = new Audio("assets/sfx/correct.wav");
 var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
+// FUNCTION TO START
 function startQuiz() {
-  // hide start screen
+  // We are hiding the start screen by setting the attr to hide to bring in the questions.
   var startScreenEl = document.getElementById("start-screen");
   startScreenEl.setAttribute("class", "hide");
 
-  // un-hide questions section
+  // We are un-hiding the questions section.
   questionsEl.removeAttribute("class");
 
-  // start timer
+  // Starting the timer.
   timerId = setInterval(clockTick, 1000);
 
-  // show starting time
+  // Show the time to text.
   timerEl.textContent = time;
 
+  // Call in the questions in place of our clean DOM.
   getQuestion();
 }
 
+// FUNCTION TO START QUESTIONS
 function getQuestion() {
-  // get current question object from array
+  // Get the first indexed question. (currentQuestionIndex is equal to index 0).
   var currentQuestion = questions[currentQuestionIndex];
 
-  // update title with current question
+  // Manipulate the DOM adding the questions to the title element.
   var titleEl = document.getElementById("question-title");
   titleEl.textContent = currentQuestion.title;
 
-  // clear out any old question choices
+  // One of my FAV. This clears out any html in the area you target.
   choicesEl.innerHTML = "";
 
-  // loop over choices
+  // loop over choices with a forEach button lol.
   currentQuestion.choices.forEach(function(choice, i) {
     // create new button for each choice
     var choiceNode = document.createElement("button");
@@ -57,22 +59,22 @@ function getQuestion() {
     // attach click event listener to each choice
     choiceNode.onclick = questionClick;
 
-    // display on the page
+    // Add to the DOM
     choicesEl.appendChild(choiceNode);
   });
 }
 
 function questionClick() {
-  // check if user guessed wrong
+  // Conditional statements to check right or wrong clicks.
   if (this.value !== questions[currentQuestionIndex].answer) {
-    // penalize time
+    // Wrong -15
     time -= 15;
 
     if (time < 0) {
       time = 0;
     }
 
-    // display new time on page
+    // Add time to the DOM
     timerEl.textContent = time;
 
     // play "wrong" sound effect
@@ -92,7 +94,7 @@ function questionClick() {
     feedbackEl.setAttribute("class", "feedback hide");
   }, 1000);
 
-  // move to next question
+  // increment up to next question
   currentQuestionIndex++;
 
   // check if we've run out of questions
@@ -107,11 +109,11 @@ function quizEnd() {
   // stop timer
   clearInterval(timerId);
 
-  // show end screen
+  // show end screen by un-hiding the attr.
   var endScreenEl = document.getElementById("end-screen");
   endScreenEl.removeAttribute("class");
 
-  // show final score
+  // Display final score
   var finalScoreEl = document.getElementById("final-score");
   finalScoreEl.textContent = time;
 
@@ -124,7 +126,7 @@ function clockTick() {
   time--;
   timerEl.textContent = time;
 
-  // check if user ran out of time
+  // check if out of time
   if (time <= 0) {
     quizEnd();
   }
@@ -136,11 +138,12 @@ function saveHighscore() {
 
   // make sure value wasn't empty
   if (initials !== "") {
-    // get saved scores from localstorage, or if not any, set to empty array
+    // You have to get saved scores from local-storage first, or if not any, set to empty array before you can set in L.S. in a function.
     var highscores =
       JSON.parse(window.localStorage.getItem("highscores")) || [];
-
-    // format new score object for current user
+    
+      // L.S. only takes in string. So we use JSON parse to pull and stringify to put/set.
+    // Format new score object for current user
     var newScore = {
       score: time,
       initials: initials
@@ -150,7 +153,7 @@ function saveHighscore() {
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
 
-    // redirect to next page
+    // Redirect to next page with DOM manipulation and href, cool huh?..
     window.location.href = "highscores.html";
   }
 }
@@ -162,10 +165,10 @@ function checkForEnter(event) {
   }
 }
 
-// user clicks button to submit initials
+// User clicks button to submit initials
 submitBtn.onclick = saveHighscore;
 
-// user clicks button to start quiz
+// User clicks button to start quiz
 startBtn.onclick = startQuiz;
 
 initialsEl.onkeyup = checkForEnter;
