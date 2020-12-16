@@ -48,7 +48,7 @@ function getQuestion() {
   choicesEl.innerHTML = "";
 
   // loop over choices with a forEach button lol.
-  currentQuestion.choices.forEach(function(choice, i) {
+  currentQuestion.choices.forEach(function (choice, i) {
     // create new button for each choice
     var choiceNode = document.createElement("button");
     choiceNode.setAttribute("class", "choice");
@@ -90,7 +90,7 @@ function questionClick() {
 
   // flash right/wrong feedback on page for half a second
   feedbackEl.setAttribute("class", "feedback");
-  setTimeout(function() {
+  setTimeout(function () {
     feedbackEl.setAttribute("class", "feedback hide");
   }, 1000);
 
@@ -141,12 +141,12 @@ function saveHighscore() {
     // You have to get saved scores from local-storage first, or if not any, set to empty array before you can set in L.S. in a function.
     var highscores =
       JSON.parse(window.localStorage.getItem("highscores")) || [];
-    
-      // L.S. only takes in string. So we use JSON parse to pull and stringify to put/set.
+
+    // L.S. only takes in string. So we use JSON parse to pull and stringify to put/set.
     // Format new score object for current user
     var newScore = {
       score: time,
-      initials: initials
+      initials: initials,
     };
 
     // save to localstorage
